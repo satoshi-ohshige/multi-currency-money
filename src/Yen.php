@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace App;
 
-
 class Yen
 {
     /**
@@ -14,5 +13,10 @@ class Yen
     public function __construct(private int $amount)
     {
 
+    }
+
+    public function toInt(): int
+    {
+        return $this->amount;
     }
 }
