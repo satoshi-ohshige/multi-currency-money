@@ -2,6 +2,7 @@
 
 namespace AppTest;
 
+use App\Calculator;
 use App\Yen;
 use PHPUnit\Framework\TestCase;
 
@@ -15,6 +16,6 @@ class AddTest extends TestCase
         $yen300 = new Yen(300);
 
         $calculator = new Calculator();
-        $this->assertSame($yen300, $calculator.add($yen100, $yen200));
+        $this->assertSame($yen300, $calculator->add($yen100, $yen200));
     }
 }
