@@ -13,9 +13,7 @@ class AddTest extends TestCase
         $yen100 = new Yen(100);
         $yen200 = new Yen(200);
 
-        $yen300 = new Yen(300);
-
         $calculator = new Calculator();
-        $this->assertSame($yen300, $calculator->add($yen100, $yen200));
+        $this->assertSame(300, $calculator->add($yen100, $yen200)->toInt());
     }
 }
