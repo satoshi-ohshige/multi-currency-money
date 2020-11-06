@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class ExchangeTest extends TestCase
 {
-    public function test_1ドルを与えたら100円が返ってくるテスト()
+    public function test_ドルを円に変換するテスト()
     {
         $dollar1 = new Dollar(1);
         $yen100 = new Yen(100);
