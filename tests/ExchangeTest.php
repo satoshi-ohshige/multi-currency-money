@@ -14,5 +14,9 @@ class ExchangeTest extends TestCase
         $dollar1 = new Dollar(1);
         $yen100 = new Yen(100);
         $this->assertSame($yen100->toInt(), $dollar1->toYen()->toInt());
+
+        $dollar2 = new Dollar(2);
+        $yen200 = new Yen(200);
+        $this->assertSame($yen200->toInt(), $dollar2->toYen()->toInt());
     }
 }
