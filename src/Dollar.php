@@ -19,4 +19,9 @@ class Dollar
     {
         return new Yen($this->amount*100);
     }
+
+    public function toInt(): int
+    {
+        return $this->amount;
+    }
 }
