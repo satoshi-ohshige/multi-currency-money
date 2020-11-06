@@ -17,6 +17,6 @@ class Dollar
 
     public function toYen(): Yen
     {
-        return new Yen(100);
+        return new Yen($this->amount*100);
     }
 }
