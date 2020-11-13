@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace AppTest;
 
-use App\Calculator;
 use App\Yen;
 use App\Dollar;
 use PHPUnit\Framework\TestCase;
@@ -15,9 +14,7 @@ class AddTest extends TestCase
         $yen100 = new Yen(100);
         $yen200 = new Yen(200);
 
-        $calculator = new Calculator();
-
-        $add_result = $calculator->add($yen100, $yen200);
+        $add_result = $yen100->add($yen200);
         $this->assertSame(300, $add_result->toInt());
         $this->assertInstanceOf(Yen::class, $add_result);
     }
@@ -27,9 +24,7 @@ class AddTest extends TestCase
         $yen100 = new Yen(100);
         $yen300 = new Yen(300);
 
-        $calculator = new Calculator();
-
-        $add_result = $calculator->add($yen100, $yen300);
+        $add_result = $yen100->add($yen300);
         $this->assertSame(400, $add_result->toInt());
         $this->assertInstanceOf(Yen::class, $add_result);
 
@@ -40,9 +35,7 @@ class AddTest extends TestCase
         $dollar1 = new Dollar(1);
         $dollar3 = new Dollar(3);
 
-        $calculator = new Calculator();
-
-        $add_result = $calculator->add($dollar1, $dollar3);
+        $add_result = $dollar1->add($dollar3);
         $this->assertSame(4, $add_result->toInt());
         $this->assertInstanceOf(Dollar::class, $add_result);
     }
