@@ -7,7 +7,7 @@ namespace App;
 class Calculator
 {
     // 候補1 money型
-    public function add(Yen $augend, Yen $addition): Yen
+    public function add(Currency $augend, Currency $addition): Currency
     {
         return new Yen($augend->toInt() + $addition->toInt());
     }
