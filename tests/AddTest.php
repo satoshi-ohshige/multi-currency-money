@@ -42,7 +42,6 @@ class AddTest extends TestCase
 
         $calculator = new Calculator();
 
-        // TODO: このてすとは動かない
         $add_result = $calculator->add($dollar1, $dollar3);
         $this->assertSame(4, $add_result->toInt());
         $this->assertInstanceOf(Dollar::class, $add_result);
