@@ -16,7 +16,10 @@ class AddTest extends TestCase
         $yen200 = new Yen(200);
 
         $calculator = new Calculator();
-        $this->assertSame(300, $calculator->add($yen100, $yen200)->toInt());
+
+        $add_result = $calculator->add($yen100, $yen200);
+        $this->assertSame(300, $add_result->toInt());
+        $this->assertInstanceOf(Yen::class, $add_result);
     }
 
     public function test_100円足す300円は400円になることのテスト()
@@ -25,7 +28,11 @@ class AddTest extends TestCase
         $yen300 = new Yen(300);
 
         $calculator = new Calculator();
-        $this->assertSame(400, $calculator->add($yen100, $yen300)->toInt());
+
+        $add_result = $calculator->add($yen100, $yen300);
+        $this->assertSame(400, $add_result->toInt());
+        $this->assertInstanceOf(Yen::class, $add_result);
+
     }
 
     public function test_1ドル足す3ドルは4ドルになることのテスト()
@@ -34,7 +41,11 @@ class AddTest extends TestCase
         $dollar3 = new Dollar(3);
 
         $calculator = new Calculator();
-        $this->assertSame(4, $calculator->add($dollar1, $dollar3)->toInt());
+
+        // TODO: このてすとは動かない
+        $add_result = $calculator->add($dollar1, $dollar3);
+        $this->assertSame(4, $add_result->toInt());
+        $this->assertInstanceOf(Dollar::class, $add_result);
     }
 
 }
