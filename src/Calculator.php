@@ -8,6 +8,6 @@ class Calculator
 {
     public function add(Yen $augend, Yen $addition): Yen
     {
-        return new Yen(300);
+        return new Yen($augend->toInt() + $addition->toInt());
     }
 }
