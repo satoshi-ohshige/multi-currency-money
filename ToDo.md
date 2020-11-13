@@ -11,7 +11,6 @@
 - お金インターフェースを作る
 - toYen()とtoDollar()をひとつのクラスにおいておく
 - 50円を0.5ドルに変換する
-- calculatorのaddをyenクラスで持つ？
 
 - 標準入力
 - 標準出力
@@ -28,3 +27,4 @@
 - お金クラスを用意する？
 - 重複しているtoInt()を一つにする
 - calculator->addがYenを返すことテストする
+- calculatorのaddをyenクラスで持つ
