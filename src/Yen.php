@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Dollar;
+
 class Yen
 {
     /**
@@ -18,5 +20,10 @@ class Yen
     public function toInt(): int
     {
         return $this->amount;
+    }
+
+    public function toDollar(): Dollar
+    {
+        return new Dollar($this->amount / 100);
     }
 }
