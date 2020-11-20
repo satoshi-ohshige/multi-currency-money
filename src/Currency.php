@@ -14,9 +14,4 @@ abstract class Currency
     {
         return $this->amount;
     }
-
-    public function add(Currency $addition): Currency
-    {
-        return new ($this::class)($this->amount + $addition->toInt());
-    }
 }
