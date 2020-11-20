@@ -14,4 +14,14 @@ abstract class Currency
     {
         return $this->amount;
     }
+
+    public function toDollar(): Dollar
+    {
+        return new Dollar((int)($this->amount * CurrencyRate::$rate[$this::class][Dollar::class]));
+    }
+
+    public function toYen(): Yen
+    {
+        return new Yen((int)($this->amount * CurrencyRate::$rate[$this::class][Yen::class]));
+    }
 }
