@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace AppTest;
+namespace AppTest\Unit;
 
 use App\Dollar;
 use App\Yen;
