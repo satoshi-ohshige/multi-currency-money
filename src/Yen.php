@@ -5,8 +5,8 @@ namespace App;
 
 class Yen extends Currency
 {
-    public function add(Currency $addition): Yen
+    public function add(Yen $addition): Yen
     {
-        return new Yen($this->amount + $addition->toYen()->toInt());
+        return new Yen($this->amount + $addition->toInt());
     }
 }
