@@ -15,8 +15,19 @@ abstract class Currency
         return $this->amount;
     }
 
-    public function add(Currency $addition): Currency
+    public function toDollar(): Dollar
     {
-        return new ($this::class)($this->amount + $addition->toInt());
+        if ($this instanceof Dollar) {
+            return $this;
+        }
+        return new Dollar((int)($this->amount * CurrencyRate::$rate[$this::class][Dollar::class]));
+    }
+
+    public function toYen(): Yen
+    {
+        if ($this instanceof Yen) {
+            return $this;
+        }
+        return new Yen((int)($this->amount * CurrencyRate::$rate[$this::class][Yen::class]));
     }
 }

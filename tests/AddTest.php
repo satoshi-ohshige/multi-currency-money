@@ -40,7 +40,6 @@ class AddTest extends TestCase
         $this->assertInstanceOf(Dollar::class, $add_result);
     }
 
-    // このてすとは通らない
     public function test_100円足す1ドルは200円になることのテスト()
     {
         $yen100 = new Yen(100);
@@ -49,6 +48,16 @@ class AddTest extends TestCase
         $add_result = $yen100->add($dollar1);
         $this->assertSame(200, $add_result->toInt());
         $this->assertInstanceOf(Yen::class, $add_result);
+    }
+
+    public function test_1ドル足す100円は2ドルになることのテスト()
+    {
+        $dollar1 = new Dollar(1);
+        $yen100 = new Yen(100);
+
+        $add_result = $dollar1->add($yen100);
+        $this->assertSame(2, $add_result->toInt());
+        $this->assertInstanceOf(Dollar::class, $add_result);
     }
 
 }

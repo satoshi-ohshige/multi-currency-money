@@ -25,4 +25,10 @@ class YenTest extends TestCase
         $dollar2 = new Dollar(2);
         $this->assertSame($dollar2->toInt(), $yen200->toDollar()->toInt());
     }
+
+    public function test_円を円に変換するテスト()
+    {
+        $yen100 = new Yen(100);
+        $this->assertSame($yen100->toInt(), $yen100->toYen()->toInt());
+    }
 }
