@@ -5,8 +5,8 @@ namespace App;
 
 class Dollar extends Currency
 {
-    public function add(Currency $addition): Dollar
+    public function add(Dollar $addition): Dollar
     {
-        return new Dollar($this->amount + $addition->toDollar()->toInt());
+        return new Dollar($this->amount + $addition->toInt());
     }
 }
