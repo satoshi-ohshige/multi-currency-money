@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace AppTest;
 
 use App\Dollar;
+use App\Exchange;
 use App\Yen;
 use PHPUnit\Framework\TestCase;
 
