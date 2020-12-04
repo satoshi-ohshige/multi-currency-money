@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace AppTest\Unit;
 
 use App\Dollar;
+use App\Euro;
 use App\Exchange;
 use App\Yen;
 use PHPUnit\Framework\TestCase;
@@ -26,6 +27,22 @@ class ExchangeTest extends TestCase
         $this->assertInstanceOf(Dollar::class, $exchanged_dollar1);
         $this->assertInstanceOf(Dollar::class, $exchanged_dollar2);
 
+    }
+
+    public function test_円をユーロに変換するテスト()
+    {
+        $yen130 = new Yen(130);
+        $yen65 = new Yen(65);
+        $exchange = new Exchange();
+
+        $exchanged_euro1 = $exchange->toEuro($yen130);
+        $exchanged_euro0dot5 = $exchange->toEuro($yen65);
+
+        $this->assertSame(1.0, $exchanged_euro1->getAmount());
+        $this->assertSame(0.5, $exchanged_euro0dot5->getAmount());
+
+        $this->assertInstanceOf(Euro::class, $exchanged_euro1);
+        $this->assertInstanceOf(Euro::class, $exchanged_euro0dot5);
     }
 
     // public function test_円を円に変換するテスト()

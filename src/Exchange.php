@@ -20,4 +20,9 @@ class Exchange
     {
         return $currency->getAmount() * CurrencyRate::$rate[$currency::class][$to_exchange_class_name];
     }
+
+    public function toEuro(Currency $currency): Euro
+    {
+        return new Euro($this->exchange($currency, Euro::class));
+    }
 }
