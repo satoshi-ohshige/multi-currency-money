@@ -18,4 +18,15 @@ class CurrencyTest extends TestCase {
 
         $this->assertSame(200, $currency_200->toInt());
     }
+
+    public function test_Currencyを継承したオブジェクトが小数値を返すことのテスト()
+    {
+        $currency_100 = new class(100) extends Currency{};
+
+        $this->assertSame((float)100, $currency_100->getAmount());
+
+        $currency_0dot5 = new class(0.5) extends Currency{};
+
+        $this->assertSame(0.5, $currency_0dot5->getAmount());
+    }
 }
