@@ -5,12 +5,17 @@ namespace App;
 
 abstract class Currency
 {
-    public function __construct(protected int $amount)
+    public function __construct(protected float $amount)
     {
 
     }
 
     public function toInt(): int
+    {
+        return (int)$this->amount;
+    }
+
+    public function getAmount(): float
     {
         return $this->amount;
     }
