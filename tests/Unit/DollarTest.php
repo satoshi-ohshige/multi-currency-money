@@ -8,12 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class DollarTest extends TestCase
 {
-    public function test_Dollarオブジェクトを数値に変換することのテスト()
-    {
-        $this->assertSame(100, (new Dollar(100))->toInt());
-        $this->assertSame(200, (new Dollar(200))->toInt());
-    }
-
     public function test_1ドル足す3ドルは4ドルになることのテスト()
     {
         $dollar1 = new Dollar(1);
